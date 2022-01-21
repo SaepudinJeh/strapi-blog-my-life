@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "acts",
+  "info": {
+    "singularName": "act",
+    "pluralName": "acts",
+    "displayName": "Act"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "minLength": 1
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "desc": {
+      "type": "richtext",
+      "required": false
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "story": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::story.story",
+      "inversedBy": "acts"
+    }
+  }
+}
