@@ -71,10 +71,10 @@
         "images"
       ]
     },
-    "acts": {
+    "stories": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::act.act",
+      "target": "api::story.story",
       "mappedBy": "user"
     }
   }
