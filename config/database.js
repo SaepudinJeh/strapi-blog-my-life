@@ -11,9 +11,23 @@ module.exports = ({ env }) => ({
       user: config.user,
       password: config.password,
       ssl: {
-        rejectUnauthorized: false
-      },
+          rejectUnauthorized: false
+        },
     },
     debug: false,
   },
 });
+    
+
+// Local Development
+// const path = require('path')
+
+// module.exports = ({ env }) => ({
+//   connection: {
+//     client: 'sqlite',
+//     connection: {
+//       filename: path.join(__dirname, '..', env('DATABASE_FILENAME', '.tmp/data.db')),
+//     },
+//     useNullAsDefault: true,
+//   },
+// });

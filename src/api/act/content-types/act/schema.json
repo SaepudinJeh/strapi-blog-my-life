@@ -4,7 +4,8 @@
   "info": {
     "singularName": "act",
     "pluralName": "acts",
-    "displayName": "Act"
+    "displayName": "Act",
+    "description": ""
   },
   "options": {
     "draftAndPublish": false
@@ -20,22 +21,34 @@
       "type": "uid",
       "targetField": "title"
     },
-    "desc": {
-      "type": "richtext",
-      "required": false
-    },
     "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "story": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::story.story",
       "inversedBy": "acts"
+    },
+    "desc": {
+      "type": "text",
+      "required": true,
+      "minLength": 1
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "acts"
+    },
+    "time": {
+      "type": "string",
+      "minLength": 1
     }
   }
 }
